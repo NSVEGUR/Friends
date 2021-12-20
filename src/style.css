@@ -629,6 +629,7 @@ nav ul li a{
 }
 .fab, .far{
   color: white;
+  transition: transform 0.7s ease-in-out;
 }
 .fab:hover ,.far:hover, .me:hover{
   transform: scale(1.5);

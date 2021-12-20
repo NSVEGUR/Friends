@@ -3,7 +3,7 @@
   --secondary-font: 'Source Sans Pro', sans-serif;
   --primary-friends-font: 'friends', sans-serif;
   --primary-dark-color: #000505;
-	--secondary-dark-color: #232424;
+	--secondary-dark-color: #111111;
 }
 @font-face {
   font-family: friends;
@@ -20,20 +20,46 @@
 
 body{
   font-family: var(--primary-font);
-  background: var(--secondary-dark-color);
+  background: var(--primary-dark-color);
   font-size: 10px;
   animation: transitionInNormal 1s;
   color: white;
   overflow-x: hidden;
   overflow-y: scroll;
+  /* background: url('../assets/images/me/dot_background.png') no-repeat;
+  background-size: cover;
+  background-attachment: fixed; */
 }
 
-.document{
+#documentation{
 	height: 100vh;
   margin: 40px;
 	padding: 10px;
-	background: var(--primary-dark-color);
+	background: var(--secondary-dark-color);
 }
+
+#float{
+	position:fixed;
+	width:80px;
+	bottom: 30px;
+  right: 30px;
+	border-radius: 20px;
+	text-align:center;
+  z-index: 100;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background:rgb(42, 42, 42);
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.likes-count{
+  font-size: 20px;
+}
+
 
 .red-dot{
   color: red;
@@ -50,4 +76,65 @@ body{
 }
 h1{
 	text-align: center;
+}
+
+#me{
+  margin: 20px 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  gap: 10px;
+  color:rgb(168, 167, 167);
+  /* border: 3px solid white; */
+  /* height: 100vh; */
+}
+#me a{
+  color: white;
+  text-decoration: underline;
+}
+.social-accounts{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.me{
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.fab, .far{
+  color: white;
+  transition: transform 0.5s ease-in-out;
+}
+.fab:hover ,.far:hover, .me:hover{
+  transform: scale(1.5);
+}
+.fa-heart{
+  color: red;
+ }
+#float:hover{
+  transform: scale(1.1);
+  background: rgba(230, 77, 77, 0.705);
+}
+.hidden{
+  display: none;
+}
+@media (max-width:480px) {
+  #documentation{
+    margin: 10px;
+  }
+  #float{
+	width:50px;
+  bottom: 10px;
+  right: 10px;
+  }
+  .likes-count{
+    font-size:15px;
+  }
+  .fa-heart{
+    font-size:15px;
+  }
 }
