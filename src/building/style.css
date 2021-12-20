@@ -1,0 +1,53 @@
+:root{
+  --primary-font: 'Open Sans', sans-serif;
+  --secondary-font: 'Source Sans Pro', sans-serif;
+  --primary-friends-font: 'friends', sans-serif;
+  --primary-dark-color: #000505;
+	--secondary-dark-color: #232424;
+}
+@font-face {
+  font-family: friends;
+  src: url(../assets/fonts/friends.TTF);
+  font-weight: bold;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body{
+  font-family: var(--primary-font);
+  background: var(--secondary-dark-color);
+  font-size: 10px;
+  animation: transitionInNormal 1s;
+  color: white;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.document{
+	height: 100vh;
+  margin: 40px;
+	padding: 10px;
+	background: var(--primary-dark-color);
+}
+
+.red-dot{
+  color: red;
+}
+.yellow-dot{
+  color: yellow;
+}
+.blue-dot{
+  color: rgb(53, 165, 235);
+}
+
+.friends{
+  font-family: var(--primary-friends-font);
+}
+h1{
+	text-align: center;
+}

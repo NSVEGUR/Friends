@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/549aab17e5.js" crossorigin="anonymous"></script>
+  <script defer type="module" src="./main.js"></script>
+  <title>F&#183;R&#183;I&#183;E&#183;N&#183;D&#183;S</title>
+</head>
+
+<body>
+  <div class="nav-container">
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="menu">
+        &#9776;
+      </label>
+      <label class="logo">F <span class="red-dot">&#8226</span>R <span class="yellow-dot">&#8226</span>I <span
+          class="blue-dot">&#8226</span>E <span class="red-dot">&#8226</span>N <span class="yellow-dot">&#8226</span>D
+        <span class="blue-dot">&#8226</span>S</label>
+      <ul>
+        <li class="home-btn"><a href="#home">Home</a></li>
+        <li class="about-btn"><a href="#about">About</a></li>
+        <li class="actors-btn"><a href="#actors">Actors</a></li>
+        <li class="reviews-btn"><a href="#reviews">Reviews</a></li>
+        <li class="blogs-btn"><a href="#blogs">Blogs</a></li>
+        <li class="videos-btn"><a href="#gallery">Videos</a></li>
+      </ul>
+    </nav>
+  </div>
+  <a id="float" href="https://nsvegur.github.io/Blog" target="_blank">
+    <div id="myfloat"></div>
+    <img src="assets/images/me/sai.JPG">
+  </a>
+  <section id="home" class="parallax">
+    <div class="friends-song">
+      <h1>So no one told you life was gonna be this way</h1>
+      <h1>Your job's a joke, you're broke</h1>
+      <h1>Your love life's DOA</h1>
+      <h1> It's like you're always stuck in second gear</h1>
+      <h1> When it hasn't been your day, your week, your month</h1>
+      <h1> Or even your year, but</h1>
+      <h1>I'll be there for you</h1>
+      <h1>(When the rain starts to pour)</h1>
+      <h1> I'll be there for you</h1>
+      <h1> (Like I've been there before)</h1>
+      <h1> I'll be there for you</h1>
+      <h1> ('Cause you're there for me too)</h1>
+    </div>
+    <div class="overlay"></div>
+    <div class="home-captions">
+      <h1>Could</h1>
+      <h1>this be</h1>
+      <h1>more</h1>
+      <h1 class="friends-tag">G <span class="red-dot">&#8226</span>O <span class="yellow-dot">&#8226</span>A <span
+          class="blue-dot">&#8226</span>T !?
+      </h1>
+    </div>
+  </section>
+  <section id="about">
+    <h1 class="friends-tag headers" data-aos="flip-down" data-aos-duration="1500">A <span class="red-dot">&#8226</span>B
+      <span class="yellow-dot">&#8226</span>O
+      <span class="blue-dot">&#8226</span>U <span class="red-dot">&#8226</span>T
+    </h1>
+    <div class="about-flex">
+      <div class="about-images">
+        <div class="about-image-1" data-aos="fade-up-right" data-aos-duration="2000"><img
+            src="./assets/images/about_section/about_1.png" />
+        </div>
+        <!-- <div data-aos="zoom-in" data-aos-duration="2000"><svg class="about-image-square-1" viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FF0000"
+              d="M25.4,-35C35.2,-27.8,47.1,-23.5,48.5,-16.4C49.9,-9.3,40.8,0.5,36.2,10.9C31.6,21.3,31.5,32.2,26.2,44.4C20.9,56.7,10.5,70.1,0.9,68.9C-8.6,67.6,-17.2,51.6,-23.3,39.6C-29.5,27.7,-33.1,19.8,-44.6,8.7C-56.1,-2.3,-75.5,-16.6,-74.2,-25.2C-73,-33.9,-51,-36.9,-35.2,-42.2C-19.4,-47.5,-9.7,-55,-1,-53.7C7.8,-52.4,15.6,-42.2,25.4,-35Z"
+              transform="translate(100 100)" />
+          </svg></div>
+        <div data-aos="zoom-in" data-aos-duration="2000">
+          <svg class="about-image-square-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FFFF00"
+              d="M29.8,-50.9C41.6,-44.8,56.3,-42.9,61.3,-35.1C66.3,-27.3,61.5,-13.7,61.8,0.1C62,13.9,67.1,27.8,63.4,37.7C59.6,47.5,46.8,53.2,34.7,55.7C22.7,58.3,11.3,57.6,2.3,53.5C-6.7,49.5,-13.4,42.1,-21,37C-28.6,31.9,-37.1,29.1,-48.9,23.3C-60.7,17.6,-75.9,8.8,-80.1,-2.4C-84.3,-13.6,-77.5,-27.3,-70.6,-41.4C-63.6,-55.6,-56.3,-70.3,-44.5,-76.5C-32.7,-82.7,-16.4,-80.4,-3.7,-74C9,-67.6,18,-57.1,29.8,-50.9Z"
+              transform="translate(100 100)" />
+          </svg>
+        </div>
+        <div data-aos="zoom-in" data-aos-duration="2000">
+          <svg class="about-image-square-3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#35a5eb"
+              d="M29.6,-51.3C34.7,-48.3,32.7,-33,37.4,-22.4C42.2,-11.8,53.6,-5.9,62.1,4.9C70.6,15.7,76.1,31.4,73.1,45C70.1,58.5,58.5,69.9,44.9,76.4C31.3,83,15.6,84.7,4.9,76.2C-5.8,67.7,-11.6,49,-23.7,41.5C-35.7,34.1,-54,37.9,-61.9,32.9C-69.8,27.8,-67.3,13.9,-64.5,1.6C-61.7,-10.7,-58.7,-21.4,-51.3,-27.2C-43.8,-33,-32,-33.9,-22.7,-34.6C-13.4,-35.3,-6.7,-35.7,2.8,-40.5C12.2,-45.3,24.5,-54.4,29.6,-51.3Z"
+              transform="translate(100 100)" />
+          </svg>
+        </div> -->
+        <!-- <div class="about-image-2" data-aos="fade-up-left" data-aos-duration="2000"><img
+            src="./assets/images/about_section/about_2.jpg" />
+        </div> -->
+      </div>
+      <div class="about-text-grid" data-aos="fade-up" data-aos-duration="500">
+        <p> &emsp; &emsp; &emsp;Friends is
+          an American television sitcom
+          created by <a href="https://en.wikipedia.org/wiki/David_Crane_(producer)">David
+            Crane</a>
+          and <a href="https://en.wikipedia.org/wiki/Marta_Kauffman">Marta Kauffman</a>, which aired on NBC from
+          September 22, 1994, to May 6, 2004, lasting ten
+          seasons.With
+          an ensemble cast starring <a href="https://en.wikipedia.org/wiki/Jennifer_Aniston">Jennifer Aniston</a>,
+          <a href="https://en.wikipedia.org/wiki/Courteney_Cox">Courteney Cox</a>, <a
+            href="https://en.wikipedia.org/wiki/Lisa_Kudrow">Lisa Kudrow</a>, <a
+            href="https://en.wikipedia.org/wiki/Matt_LeBlanc">Matt LeBlanc</a>, <a
+            href="https://en.wikipedia.org/wiki/Matthew_Perry">Matthew Perry</a> and <a
+            href="https://en.wikipedia.org/wiki/David_Schwimmer">David
+            Schwimmer</a>, the show revolves around six friends in their 20s and 30s who live in Manhattan, New York
+          City.
+        </p>
+        <p>&emsp; &emsp; &emsp;Filming took place at <a href="https://en.wikipedia.org/wiki/Warner_Bros.">Warner
+            Bros</a>. Studios in
+          Burbank, California. All ten seasons of Friends ranked within
+          the top ten of the final television season ratings; it ultimately reached the number-one spot in its <a
+            href="https://en.wikipedia.org/wiki/Friends_(season_8)">eighth
+            season</a>. The series <a href="https://en.wikipedia.org/wiki/The_Last_One_(Friends)">finale</a> aired on
+          May 6, 2004, and was watched by around 52.5 million American viewers,
+          making it the fifth-most-watched series finale in television history and the most-watched television
+          episode of the 2000s.
+        </p>
+        <div>
+          <img src="./assets/images/icons/imdb.png">
+          <p> 8.8/10 | 1994 | 12+ | Sitcom</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="actors" class="parallax-both-section">
+    <div class="overlay"></div>
+    <h1 class="friends-tag headers actor-header" data-aos="flip-down" data-aos-duration="1500">A <span
+        class="red-dot">&#8226</span>C
+      <span class="yellow-dot">&#8226</span>T
+      <span class="blue-dot">&#8226</span>O <span class="red-dot">&#8226</span>R <span class="yellow-dot">&#8226</span>S
+    </h1>
+    <div class="slides parallax-both" data-aos="fade-up" data-aos-duration="1500">
+      <!-- <div class="arrow left">
+        <img src="./assets/images/icons/left.png" alt="left arrow" />
+      </div> -->
+      <div class="slide slide-1">
+        <div class="actor">
+          <div class="actor-image">
+            <img src="assets/images/actors_section/chandler.png" />
+          </div>
+          <div class="about-actor">
+            <h1>Chandler Bing</h1>
+            <p>&emsp; &emsp; &emsp;Chandler Muriel Bing is a fictional character from the NBC sitcom Friends, portrayed
+              by actor <a href="https://en.wikipedia.org/wiki/Matthew_Perry">Matthew Perry</a>. Chandler was born to
+              Nora
+              Tyler Bing, an erotic romance novelist, and Charles
+              Bing, a gay female impersonator and star of a Las Vegas drag show called "Viva Las Gay-gas" as Helena
+              Handbasket.Chandler's best friend is Joey Tribbiani, who is his roommate. He previously lived with his
+              good friend Ross Geller. He met Ross' sister, Monica Geller, and her friend, Rachel Green, while
+              celebrating Thanksgiving at Ross' parents' house.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide slide-2">
+        <div class="actor">
+          <div class="actor-image">
+            <img src="assets/images/actors_section/monica.png" />
+          </div>
+          <div class="about-actor">
+            <h1>Monica Geller</h1>
+            <p>&emsp; &emsp; &emsp;Monica E. Geller is
+              played by <a href="https://en.wikipedia.org/wiki/Courteney_Cox">Courteney Cox</a>. Monica was known as the
+              "Mother Hen" of the group and her Greenwich Village
+              apartment was one of the group's main gathering places.A chef known for her cleanliness, competitiveness
+              and obsessive-compulsive nature, Monica is the younger sister of Ross Geller and best friend of Rachel
+              Green, the latter of whom she invites to live with her after Rachel forsakes her own wedding. The two
+              characters spend several years living together as roommates until Monica begins a romantic relationship
+              with long-time neighbor and friend Chandler Bing, whom she marries.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide slide-3">
+        <div class="actor">
+          <div class="actor-image">
+            <img src="assets/images/actors_section/phoebe.png" />
+          </div>
+          <div class="about-actor">
+            <h1>Pheobe Buffay</h1>
+            <p>&emsp; &emsp; &emsp;In the series' universe, Phoebe (Played by <a
+                href="https://en.wikipedia.org/wiki/Lisa_Kudrow">Lisa
+                Kudrow</a>) was born on February 16 and is the daughter of Frank and Lily Buffay. Her
+              birth mother's name was Phoebe Abbott, whom she was named after. Phoebe has a twin sister, Ursula, a
+              waitress who is also portrayed by Kudrow. Phoebe can speak several languages, including French and
+              Italian. She appeared in all of the show's 236 episodes. She is a masseuse and musician, notable for her
+              offbeat and extremely ditzy behavior. She was Monica Geller's roommate before Rachel Green, which is how
+              she was introduced to the group.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide slide-4">
+        <div class="actor">
+          <div class="actor-image">
+            <img src="assets/images/actors_section/ross.png" />
+          </div>
+          <div class="about-actor">
+            <h1>Ross Geller</h1>
+            <p>&emsp; &emsp; &emsp;Ross Geller, Ph.D., portrayed by <a
+                href="https://en.wikipedia.org/wiki/David_Schwimmer">David
+                Schwimmer</a>, is a paleontologist. from Columbia University.[citation needed]
+              His romantic feelings toward Rachel Green (Jennifer Aniston), which began as a high-school infatuation,
+              are an ongoing theme of his narrative arc. Likewise, their on-again, off-again romantic relationship is a
+              nearly constant theme of Friends.His relationship with Rachel Green was included in TV Guide's list of the
+              best TV couples of all time, as well as Entertainment Weekly's "30 Best 'Will They/Won't They?' TV
+              Couples".
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide slide-5">
+        <div class="actor">
+          <div class="actor-image">
+            <img src="assets/images/actors_section/joey.png" />
+          </div>
+          <div class="about-actor">
+            <h1>Joey Tribbiani</h1>
+            <p>&emsp; &emsp; &emsp;Joey (Played by <a href="https://en.wikipedia.org/wiki/Matt_LeBlanc">Matt
+                LeBlanc</a>)
+              was presumably born in 1968 as he talks about being 13 in 1981.[2] He is from Queens, New York and
+              is Catholic.[3] Joey comes from a working-class Italian-American family of eight children, of which he is
+              the only boy. His father Joseph Tribbiani, Sr. (Robert Costanzo), is a pipefitter, and his mother's name
+              is Gloria (Brenda Vaccaro).He is an Italian-American struggling actor who lives in New York City with his
+              roommate and best friend, Chandler Bing (Matthew Perry).
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide slide-6">
+        <div class="actor">
+          <div class="actor-image">
+            <img src="assets/images/actors_section/rachel.png" />
+          </div>
+          <div class="about-actor">
+            <h1>Rachel Green</h1>
+            <p>&emsp; &emsp; &emsp;Portrayed by <a href="https://en.wikipedia.org/wiki/Jennifer_Aniston">Jennifer
+                Aniston</a>, was introduced in the show's pilot as a naïve runaway bride who reunites with her
+              childhood best friend
+              Monica Geller and relocates to New York City, Rachel gradually evolves from a spoiled, inexperienced
+              "daddy's girl" into a successful businesswoman. During the show's second season, the character becomes
+              romantically involved with Monica's brother, Ross, with whom she maintains a complicated on-off
+              relationship throughout the series. Together, Ross and Rachel have a daughter, Emma.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="arrow right">
+        <img src="./assets/images/icons/right.png" alt="right arrow" />
+      </div> -->
+    </div>
+  </section>
+  <section id="gallery">
+    <div class="gallery-video-container">
+      <h1 class="friends-tag headers header-gallery" data-aos="flip-down" data-aos-duration="1500">V <span
+          class="red-dot">&#8226</span>I
+        <span class="yellow-dot">&#8226</span>D
+        <span class="blue-dot">&#8226</span>E <span class="red-dot">&#8226</span>O <span
+          class="yellow-dot">&#8226</span>S
+      </h1>
+      <video class="gallery-background-video" autoplay loop muted>
+        <source src="./assets/videos/gallery_video_background.mp4" type="video/mp4">
+      </video>
+      <div class="gallery-videos">
+        <div class=" iframe-container" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-easing="ease-in-sine">
+          <iframe src="https://www.youtube.com/embed/dfuPBC-v5NE" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="iframe-container" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-easing="ease-in-sine">
+          <iframe src="https://www.youtube.com/embed/gk5mmrCVwSc" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="iframe-container" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-easing="ease-in-sine">
+          <iframe src="https://www.youtube.com/embed/FNSd9mNioCE" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="iframe-container" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-easing="ease-in-sine">
+          <iframe src="https://www.youtube.com/embed/lldCsGsdwcw" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="iframe-container" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-easing="ease-in-sine">
+          <iframe src="https://www.youtube.com/embed/7ES5eEAb6Dw" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="iframe-container" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-easing="ease-in-sine">
+          <iframe src="https://www.youtube.com/embed/UUA70t9JrrM" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="iframe-container" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-easing="ease-in-sine">
+          <iframe src="https://www.youtube.com/embed/ji888wNv1jw" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="iframe-container" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-easing="ease-in-sine">
+          <iframe src="https://www.youtube.com/embed/vPFS4Zsvebk" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="blogs">
+    <h1 class="friends-tag headers header-gallery" data-aos="flip-down" data-aos-duration="1500">B <span
+        class="red-dot">&#8226</span>L
+      <span class="yellow-dot">&#8226</span>O
+      <span class="blue-dot">&#8226</span>G <span class="red-dot">&#8226</span>S
+    </h1>
+    <div class="blogs-grid">
+      <div class="blog" data-aos="fade-right" data-aos-duration="1500">
+        <img src="assets/images/blogs_section/friends_building.jpg" />
+        <div class="blog-overlay"></div>
+        <div class="blog-border"></div>
+        <div class="blog-text" data-aos="fade-up" data-aos-duration="3000">
+          <h1>Building
+          </h1>
+          <h2>The one where everything happens</h2>
+          <a href="./building/index.html">Read more</a>
+        </div>
+      </div>
+      <div class="blog" data-aos="fade-left" data-aos-duration="1500">
+        <img src="assets/images/blogs_section/pheobe_the_unusual.jpg" />
+        <div class="blog-overlay"></div>
+        <div class="blog-border"></div>
+        <div class="blog-text">
+          <h1>Pheobe</h1>
+          <h2>The one where everything is unusual</h2>
+          <a href="">Read more</a>
+        </div>
+      </div>
+      <div class="blog" data-aos="fade-right" data-aos-duration="2000">
+        <img src="assets/images/blogs_section/ross_and_rachel.jpg" />
+        <div class="blog-overlay"></div>
+        <div class="blog-border"></div>
+        <div class="blog-text">
+          <h1>Lobsters</h1>
+          <h2>The one with ross and rachel</h2>
+          <a href="">Read more</a>
+        </div>
+      </div>
+      <div class="blog" data-aos="fade-left" data-aos-duration="2000">
+        <img src="assets/images/blogs_section/joey_and_food.jpg" />
+        <div class="blog-overlay"></div>
+        <div class="blog-border"></div>
+        <div class="blog-text">
+          <h1>Joey</h1>
+          <h2>The one with the Food</h2>
+          <a href="">Read more</a>
+        </div>
+      </div>
+      <div class="blog" data-aos="fade-right" data-aos-duration="2500">
+        <img src="assets/images/blogs_section/seasons.jpg" />
+        <div class="blog-overlay"></div>
+        <div class="blog-border"></div>
+        <div class="blog-text">
+          <h1>Friends</h1>
+          <h2>The one where seasons are ranked</h2>
+          <a href="">Read more</a>
+        </div>
+      </div>
+      <div class="blog" data-aos="fade-left" data-aos-duration="2500">
+        <img src="assets/images/blogs_section/central_perk.jpg" />
+        <div class="blog-overlay"></div>
+        <div class="blog-border"></div>
+        <div class="blog-text">
+          <h1>Central Perk</h1>
+          <h2>The one where they hang out</h2>
+          <a href="">Read more</a>
+        </div>
+      </div>
+      <div class="blog" data-aos="fade-right" data-aos-duration="3000">
+        <img src="assets/images/blogs_section/thanksgiving.jpg" />
+        <div class="blog-overlay"></div>
+        <div class="blog-border"></div>
+        <div class="blog-text">
+          <h1>Thanksgiving</h1>
+          <h2>The one where they celebrate</h2>
+          <a href="">Read more</a>
+        </div>
+      </div>
+      <div class=" blog" data-aos="fade-left" data-aos-duration="3000">
+        <img src="assets/images/blogs_section/monica_and_chandler.jpg" />
+        <div class="blog-overlay"></div>
+        <div class="blog-border"></div>
+        <div class="blog-text">
+          <h1>Mondler</h1>
+          <h2>The one with the most romantic couple</h2>
+          <a href="">Read more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="reviews">
+    <div class="reviews-container">
+      <div class="review review-0">
+        <img class="reviewer" src="assets/images/reviews_section/patil.jpeg" />
+        <h1>Anupama Patil</h1>
+        <div class="stars">
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.</p>
+      </div>
+      <div class="review review-1">
+        <img class="reviewer" src="assets/images/reviews_section/madhav.jpeg" />
+        <h1>Venkata Madhav</h1>
+        <div class="stars">
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.</p>
+      </div>
+      <div class="review review-2">
+        <img class="reviewer" src="assets/images/reviews_section/harshith.jpeg" />
+        <h1>Krishna Harshith</h1>
+        <div class="stars">
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.</p>
+      </div>
+      <div class="review review-3">
+        <img class="reviewer" src="assets/images/reviews_section/sai.JPG" />
+        <h1>Nagasai Vegur</h1>
+        <div class="stars">
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+          <img src="assets/images/icons/yellow_star.png" />
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.</p>
+      </div>
+    </div>
+    <div class="dot-container">
+    </div>
+  </section>
+  <section id="me">
+    <!-- <a href="https://nsvegur.github.io/Blog" target="_blank"><img class="me"
+        src="assets/images/reviews_section/sai.JPG"></a> -->
+    <div class="social-accounts">
+      <a href="https://www.instagram.com/nsvegur/" target="_blank"><i class="fab fa-instagram fa-3x"></i></a>
+      <a href="https://twitter.com/VegurS" target="_blank"><i class="fab fa-twitter fa-3x"></i></a>
+      <a href="https://github.com/NSVEGUR" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+      <a href="mailto:nsvegur@gmail.com" target="_blank"><i class="far fa-envelope fa-3x"></i></a>
+    </div>
+    <h3> The assets and contents in this blog are inspired from many sites available in social platforms.
+    </h3>
+    <h3>All rights are reserved to fans of friends.</h3>
+    <h1>&#169; <a href="https://nsvegur.github.io/Blog" target="_blank">Nagasai Vegur</a> Use the contents
+      of this website for fair use
+    </h1>
+  </section>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
