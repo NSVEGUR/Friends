@@ -4,6 +4,8 @@
   --primary-friends-font: 'friends', sans-serif;
   --primary-dark-color: #000505;
 	--secondary-dark-color: #111111;
+  --progress-bar-color: #9e9e9e;
+  --dark-button-background: rgb(42, 42, 42);
 }
 @font-face {
   font-family: friends;
@@ -31,9 +33,26 @@ body{
   background-attachment: fixed; */
 }
 
+.friends{
+  font-family: var(--primary-friends-font);
+  font-size: 35px;
+  padding: 20px;
+}
+
+::-webkit-scrollbar{
+  width:0;
+}
+#horizontalProgressBar{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  background: var(--progress-bar-color);
+}
 #documentation{
 	height: 100vh;
   margin: 40px;
+  margin-top: 0;
 	padding: 10px;
 	background: var(--secondary-dark-color);
 }
@@ -51,9 +70,24 @@ body{
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  background:rgb(42, 42, 42);
+  background: var(--dark-button-background);
   padding: 5px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+#float-mode{
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  top: 30px;
+  right: 30px;
+  border-radius:50%;
+  cursor: pointer;
+  background: var(--dark-button-background);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   transition: all 0.2s ease-in-out;
 }
 .likes-count{
@@ -71,9 +105,7 @@ body{
   color: rgb(53, 165, 235);
 }
 
-.friends{
-  font-family: var(--primary-friends-font);
-}
+
 h1{
 	text-align: center;
 }
@@ -124,17 +156,27 @@ h1{
 }
 @media (max-width:480px) {
   #documentation{
-    margin: 10px;
+  margin: 10px;
+  margin-top: 0;
+  }
+  .friends{
+    font-size:20px;
   }
   #float{
 	width:50px;
   bottom: 10px;
   right: 10px;
   }
+  #float-mode{
+    height: 30px;
+    width: 30px;
+    top: 10px;
+    right: 10px;
+  }
   .likes-count{
     font-size:15px;
   }
-  .fa-heart{
+  .fa-heart, .fas{
     font-size:15px;
   }
 }
