@@ -6,6 +6,9 @@ const slides = document.querySelectorAll('.slide');
 const reviewSlides = document.querySelectorAll('.review');
 const dotContainer = document.querySelector('.dot-container');
 const floatingButton = document.getElementById('myfloat');
+
+//remove splash if visited session
+
 var lastScrollTop = 0;
 let currentSlide = 0;
 var isScrolling;
@@ -15,7 +18,7 @@ window.addEventListener('scroll', () => {
 	window.clearTimeout(isScrolling);
 	let offset = window.pageYOffset;
 	parallax.style.backgroundPositionY = offset * 0.7 + 'px';
-	parallaxXSection.style.backgroundPositionX = offset * 0.6 + 'px';
+	parallaxXSection.style.backgroundPositionX = offset * 0.2 + 'px';
 
 	// parallaxX.style.backgroundPositionY = offset * 1.3 + 'px';
 
@@ -42,6 +45,7 @@ window.addEventListener('scroll', () => {
 	}
 	lastScrollTop = st <= 0 ? 0 : st;
 })
+
 
 //evenlisteners for smooth scrolling
 // document.querySelector('.home-btn').addEventListener('click', (e) => {
@@ -81,6 +85,7 @@ window.addEventListener('scroll', () => {
 // 	})
 // });
 //translating slides on scale of 100% * i
+
 const translateSlides = () => {
 	slides.forEach(
 		(s, i) => {
@@ -101,6 +106,15 @@ const createDots = () => {
 		);
 	});
 };
+const makeDotsInteractive = () => {
+	document.querySelector(`.dot[data-review = "${currentSlide}"]`).classList.add('active-dot');
+	const dots = document.querySelectorAll('.dot');
+	dots.forEach((dot, i) => {
+		dot.addEventListener('click', () => {
+			goTo(i);
+		})
+	});
+}
 const goTo = function (slide) {
 	currentSlide = slide;
 	reviewSlides.forEach(
@@ -122,17 +136,12 @@ const goTo = function (slide) {
 	}, 200);
 
 };
+
 //starting everything
 const start = () => {
 	translateSlides();
 	createDots();
-	document.querySelector(`.dot[data-review = "${currentSlide}"]`).classList.add('active-dot');
-	const dots = document.querySelectorAll('.dot');
-	dots.forEach((dot, i) => {
-		dot.addEventListener('click', () => {
-			goTo(i);
-		})
-	});
+	makeDotsInteractive();
 }
 start();
 
