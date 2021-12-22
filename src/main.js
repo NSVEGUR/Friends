@@ -17,8 +17,8 @@ var isScrolling;
 window.addEventListener('scroll', () => {
 	window.clearTimeout(isScrolling);
 	let offset = window.pageYOffset;
-	parallax.style.backgroundPositionY = offset * 0.7 + 'px';
-	parallaxXSection.style.backgroundPositionX = offset * 0.2 + 'px';
+	// parallax.style.backgroundPositionY = offset * 0.7 + 'px';
+	// parallaxXSection.style.backgroundPositionX = offset * 0.9 + 'px';
 
 	// parallaxX.style.backgroundPositionY = offset * 1.3 + 'px';
 
