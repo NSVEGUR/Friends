@@ -2,10 +2,21 @@
   --primary-font: 'Open Sans', sans-serif;
   --secondary-font: 'Source Sans Pro', sans-serif;
   --primary-friends-font: 'friends', sans-serif;
-  --primary-dark-color: #000505;
+  --primary-dark-color: #101111;
 	--secondary-dark-color: #111111;
-  --progress-bar-color: #9e9e9e;
-  --dark-button-background: rgb(42, 42, 42);
+  --primary-light-color: #fefefe;
+  --secondary-light-color: #fafafa;
+  --primary-dark-text-color: white;
+  --secondary-dark-text-color:rgb(168, 167, 167);
+  --primary-light-text-color: black;
+  --secondary-light-text-color: rgb(73, 71, 71);
+  --progress-bar-dark-color: #9e9e9e;
+  --dark-button-background: rgb(32, 32, 32);
+  --light-button-background: #e2e2e2;
+  --light-neumorphism-shadow-1: rgb(165, 164, 164);
+  --light-neumorphism-shadow-2: rgb(255, 255, 255);
+  --dark-neumorphism-shadow-1: rgb(37, 37, 37);
+  --dark-neumorphism-shadow-2: rgb(0, 0, 0);
 }
 @font-face {
   font-family: friends;
@@ -28,11 +39,13 @@ body{
   color: white;
   overflow-x: hidden;
   overflow-y: scroll;
-  /* background: url('../assets/images/me/dot_background.png') no-repeat;
-  background-size: cover;
-  background-attachment: fixed; */
+  transform-origin: center center;
+  transition: all 0.7s ease-in-out;
 }
-
+a{
+  color: white;
+  text-decoration: underline;
+}
 .friends{
   font-family: var(--primary-friends-font);
   font-size: 35px;
@@ -47,49 +60,66 @@ body{
   left: 0;
   bottom: 0;
   height: 5px;
-  background: var(--progress-bar-color);
+  background: var(--progress-bar-dark-color);
 }
 #documentation{
 	height: 100vh;
   margin: 40px;
   margin-top: 0;
 	padding: 10px;
+  border-radius:20px;
 	background: var(--secondary-dark-color);
+  box-shadow: inset 4px 4px 7px var(--dark-neumorphism-shadow-1), inset -7px -7px 7px var(--dark-neumorphism-shadow-2);
 }
 
-#float{
-	position:fixed;
-	width:80px;
-	bottom: 30px;
+#float-mode{
+  position: fixed;
+  width: 80px;
+  height: 40px;
+  top: 30px;
   right: 30px;
-	border-radius: 20px;
-	text-align:center;
-  z-index: 100;
-  color: white;
+  border-radius:30px;
+  cursor: pointer;
+  background: var(--light-button-background);
+  box-shadow: inset 7px 7px 7px var(--light-neumorphism-shadow-1), inset -7px -7px 7px var(--light-neumorphism-shadow-2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: all 1s linear;
+}
+
+#mode-circle{
+  height: 35px;
+  width:35px;
+  background: var(--dark-button-background);
+  border-radius:50%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  background: var(--dark-button-background);
-  padding: 5px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
 }
-#float-mode{
+#float-like{
   position: fixed;
-  height: 50px;
-  width: 50px;
-  top: 30px;
+  width: 80px;
+  height: 40px;
+  bottom: 30px;
   right: 30px;
-  border-radius:50%;
+  border-radius:30px;
   cursor: pointer;
   background: var(--dark-button-background);
+  box-shadow: inset 7px 7px 7px var(--dark-neumorphism-shadow-1), inset -7px -7px 7px var(--dark-neumorphism-shadow-2);
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding-left: 5px;
+  padding-right: 5px;
   transition: all 0.2s ease-in-out;
 }
+
 .likes-count{
   font-size: 20px;
 }
@@ -118,13 +148,9 @@ h1{
   align-items:center;
   justify-content: center;
   gap: 10px;
-  color:rgb(168, 167, 167);
+  color: var(--secondary-dark-text-color);
   /* border: 3px solid white; */
   /* height: 100vh; */
-}
-#me a{
-  color: white;
-  text-decoration: underline;
 }
 .social-accounts{
   display: flex;
@@ -145,14 +171,37 @@ h1{
   transform: scale(1.5);
 }
 .fa-heart{
-  color: red;
+  color: rgb(200, 25, 25);
  }
-#float:hover{
-  transform: scale(1.1);
-  background: rgba(230, 77, 77, 0.705);
-}
+
 .hidden{
   display: none;
+}
+@media (max-width: 758px){
+    #float-mode{
+      width: 50px;
+      height: 30px;
+      top: auto;
+      right: auto;
+      bottom: 10px;
+      left: 10px;
+    }
+    #mode-circle{
+      width: 25px;
+      height: 25px;
+    }
+    #float-like{
+      width:50px;
+      height: 30px;
+      bottom: 10px;
+      right: 10px;
+      }
+    .likes-count{
+      font-size:15px;
+    }
+    .fa-heart, .fas{
+      font-size:15px;
+    }
 }
 @media (max-width:480px) {
   #documentation{
@@ -162,21 +211,5 @@ h1{
   .friends{
     font-size:20px;
   }
-  #float{
-	width:50px;
-  bottom: 10px;
-  right: 10px;
-  }
-  #float-mode{
-    height: 30px;
-    width: 30px;
-    top: 10px;
-    right: 10px;
-  }
-  .likes-count{
-    font-size:15px;
-  }
-  .fa-heart, .fas{
-    font-size:15px;
-  }
+
 }
