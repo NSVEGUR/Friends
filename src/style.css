@@ -22,7 +22,6 @@ body{
   font-family: var(--primary-font);
   background: var(--primary-dark-color);
   font-size: 10px;
-  animation: transitionInNormal 1s;
   color: white;
   margin: 0 15px 0;
   position: relative;
