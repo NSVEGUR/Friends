@@ -64,4 +64,9 @@ const changeTheme = () => {
 document.getElementById('mode-circle').addEventListener('click', () => {
 	theme = !theme;
 	changeTheme();
-})
+});
+document.querySelector('.fa-chevron-down').addEventListener('click', () => {
+	document.querySelector('main').scrollIntoView({
+		behavior: 'smooth',
+	})
+});

@@ -1,4 +1,6 @@
 import './style.css'
+
+//Dom variables
 const parallax = document.querySelector('.parallax');
 const parallaxX = document.querySelector('.parallax-both');
 const parallaxXSection = document.querySelector('.parallax-both-section');
@@ -7,85 +9,12 @@ const reviewSlides = document.querySelectorAll('.review');
 const dotContainer = document.querySelector('.dot-container');
 const floatingButton = document.getElementById('myfloat');
 
-//remove splash if visited session
-
+//script variables
 var lastScrollTop = 0;
 let currentSlide = 0;
 var isScrolling;
 
-//animations on window scroll
-window.addEventListener('scroll', () => {
-	window.clearTimeout(isScrolling);
-	let offset = window.pageYOffset;
-	// parallax.style.backgroundPositionY = offset * 0.7 + 'px';
-	// parallaxXSection.style.backgroundPositionX = offset * 0.9 + 'px';
-
-	// parallaxX.style.backgroundPositionY = offset * 1.3 + 'px';
-
-	isScrolling = setTimeout(function () {
-
-		// Run the callback
-		floatingButton.classList.remove('rotateBackgroundClockWise');
-		floatingButton.classList.remove('rotateBackgroundAntiClockWise');
-
-	}, 66);
-	var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-	if (st > lastScrollTop) {
-		// downscroll code
-		if (parallaxX.scrollLeft != parallaxX.scrollWidth) {
-			parallaxX.scrollTo(parallaxX.scrollLeft + 5, 0);
-		}
-		floatingButton.classList.add('rotateBackgroundClockWise');
-	} else {
-		// upscroll code
-		if (parallaxX.scrollLeft != parallaxX.scrollWidth) {
-			parallaxX.scrollTo(parallaxX.scrollLeft - 5, 0);
-		}
-		floatingButton.classList.add('rotateBackgroundAntiClockWise');
-	}
-	lastScrollTop = st <= 0 ? 0 : st;
-})
-
-
-//evenlisteners for smooth scrolling
-// document.querySelector('.home-btn').addEventListener('click', (e) => {
-// 	e.preventDefault();
-// 	document.getElementById('home').scrollIntoView({
-// 		behavior: 'smooth'
-// 	})
-// });
-// document.querySelector('.about-btn').addEventListener('click', (e) => {
-// 	e.preventDefault();
-// 	document.getElementById('about').scrollIntoView({
-// 		behavior: 'smooth'
-// 	})
-// });
-// document.querySelector('.actors-btn').addEventListener('click', (e) => {
-// 	e.preventDefault();
-// 	document.getElementById('actors').scrollIntoView({
-// 		behavior: 'smooth'
-// 	})
-// });
-// document.querySelector('.videos-btn').addEventListener('click', (e) => {
-// 	e.preventDefault();
-// 	document.getElementById('gallery').scrollIntoView({
-// 		behavior: 'smooth'
-// 	})
-// });
-// document.querySelector('.blogs-btn').addEventListener('click', (e) => {
-// 	e.preventDefault();
-// 	document.getElementById('blogs').scrollIntoView({
-// 		behavior: 'smooth'
-// 	})
-// });
-// document.querySelector('.reviews-btn').addEventListener('click', (e) => {
-// 	e.preventDefault();
-// 	document.getElementById('reviews').scrollIntoView({
-// 		behavior: 'smooth'
-// 	})
-// });
 //translating slides on scale of 100% * i
-
 const translateSlides = () => {
 	slides.forEach(
 		(s, i) => {
@@ -97,7 +26,8 @@ const translateSlides = () => {
 			s.style.transform = `translateX(${100 * i}%)`;
 		}
 	);
-}
+};
+//create dots
 const createDots = () => {
 	reviewSlides.forEach(function (_, i) {
 		dotContainer.insertAdjacentHTML(
@@ -106,6 +36,7 @@ const createDots = () => {
 		);
 	});
 };
+//adding listeners to dots
 const makeDotsInteractive = () => {
 	document.querySelector(`.dot[data-review = "${currentSlide}"]`).classList.add('active-dot');
 	const dots = document.querySelectorAll('.dot');
@@ -114,7 +45,8 @@ const makeDotsInteractive = () => {
 			goTo(i);
 		})
 	});
-}
+};
+//slider function
 const goTo = function (slide) {
 	currentSlide = slide;
 	reviewSlides.forEach(
@@ -136,12 +68,110 @@ const goTo = function (slide) {
 	}, 200);
 
 };
+//start listeners
+const startListeners = () => {
+	//scroll-button home
+	document.querySelector('.scroll-down').addEventListener('click', () => {
+		window.scroll({
+			top: window.innerHeight - 80,
+			left: 0,
+			behavior: 'smooth'
+		});
+	});
 
+	// evenlisteners for smooth scrolling
+	document.querySelector('.home-btn').addEventListener('click', (e) => {
+		document.getElementById('check').checked = false;
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: 'smooth'
+		});
+	});
+	document.querySelector('.about-btn').addEventListener('click', (e) => {
+		document.getElementById('check').checked = false;
+		window.scroll({
+			top: window.innerHeight - 80,
+			left: 0,
+			behavior: 'smooth'
+		});
+	});
+	document.querySelector('.actors-btn').addEventListener('click', (e) => {
+		document.getElementById('check').checked = false;
+		window.scroll({
+			top: 2 * window.innerHeight - 160,
+			left: 0,
+			behavior: 'smooth'
+		});
+	});
+	document.querySelector('.videos-btn').addEventListener('click', (e) => {
+		document.getElementById('check').checked = false;
+		window.scroll({
+			top: 3 * window.innerHeight - 160,
+			left: 0,
+			behavior: 'smooth'
+		});
+	});
+	document.querySelector('.blogs-btn').addEventListener('click', (e) => {
+		document.getElementById('check').checked = false;
+		window.scroll({
+			top: 4 * window.innerHeight - 160,
+			left: 0,
+			behavior: 'smooth'
+		});
+	});
+	document.querySelector('.reviews-btn').addEventListener('click', (e) => {
+		document.getElementById('check').checked = false;
+		window.scroll({
+			top: document.body.scrollHeight,
+			left: 0,
+			behavior: 'smooth'
+		});
+	});
+};
+//windows scroll effects
+const startWindowsScroll = () => {
+	//animations on window scroll
+	window.addEventListener('scroll', () => {
+		window.clearTimeout(isScrolling);
+		let offset = window.pageYOffset;
+		// parallax.style.backgroundPositionY = offset * 0.7 + 'px';
+		// parallaxXSection.style.backgroundPositionX = offset * 0.9 + 'px';
+
+		// parallaxX.style.backgroundPositionY = offset * 1.3 + 'px';
+
+		isScrolling = setTimeout(function () {
+
+			// Run the callback
+			floatingButton.classList.remove('rotateBackgroundClockWise');
+			floatingButton.classList.remove('rotateBackgroundAntiClockWise');
+
+		}, 66);
+		var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+		if (st > lastScrollTop) {
+			// downscroll code
+			if (parallaxX.scrollLeft != parallaxX.scrollWidth) {
+				parallaxX.scrollTo(parallaxX.scrollLeft + 5, 0);
+			}
+			floatingButton.classList.add('rotateBackgroundClockWise');
+		} else {
+			// upscroll code
+			if (parallaxX.scrollLeft != parallaxX.scrollWidth) {
+				parallaxX.scrollTo(parallaxX.scrollLeft - 5, 0);
+			}
+			floatingButton.classList.add('rotateBackgroundAntiClockWise');
+		}
+		lastScrollTop = st <= 0 ? 0 : st;
+	})
+};
 //starting everything
 const start = () => {
 	translateSlides();
 	createDots();
 	makeDotsInteractive();
+	startListeners();
+	startWindowsScroll();
 }
+
 start();
 
