@@ -1,4 +1,4 @@
-import './blog_style.css'
+import './style.css'
 
 
 let progress = document.getElementById('horizontalProgressBar');

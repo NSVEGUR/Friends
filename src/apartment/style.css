@@ -21,7 +21,7 @@
 }
 @font-face {
   font-family: friends;
-  src: url(./assets/fonts/friends.TTF);
+  src: url(../assets/fonts/friends.TTF);
   font-weight: bold;
 }
 
@@ -182,7 +182,14 @@ nav{
 .hidden{
   display: none;
 }
-
+header{
+  margin-top: 80px;
+	height: calc(100vh - 80px);
+	background: url(./images/friends_building.jpg) no-repeat center center;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+}
 .header-overlay{
   position: absolute;
   inset: 0;
