@@ -13,7 +13,7 @@ export default defineConfig({
 			input: {
 				main: resolve(root, 'index.html'),
 				apartment: resolve(root, 'apartment', 'index.html'),
-				weird_phoebe: resolve(root, 'weird_phoebe', 'index.html'),
+				pheobe: resolve(root, 'phoebe', 'index.html'),
 			}
 		}
 	}
