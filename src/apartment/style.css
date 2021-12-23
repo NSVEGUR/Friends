@@ -193,7 +193,7 @@ header{
 .header-overlay{
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: linear-gradient(to top, black 10%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.5) 100%);
 }
 .header-text{
   position: absolute;
@@ -211,15 +211,20 @@ header{
   inset: 20px;
 }
 .header-text h1{
-  color: white;
   font-family: var(--secondary-font);
   font-size: 50px;
   padding-bottom: 5px;
-  border-bottom: 5px solid white;
+  border-bottom: 5px solid;
 }
 .header-text h2{
-  color: white;
   font-size: 20px;
+}
+.header-text i{
+  cursor: pointer;
+  font-size: 30px;
+  position: absolute;
+  bottom:20px;
+  animation: jumpArrow 2s linear infinite;
 }
 main{
   width: 75%;
@@ -227,8 +232,9 @@ main{
   margin-top: 30px;
 }
 main h1{
+  font-family: var(--primary-friends-font);
   font-size: 40px;
-  margin: 30px 0;
+  margin: 50px 0;
 }
 main p{
   font-size:20px;
@@ -264,7 +270,7 @@ img{
 .overlay{
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 3;
 }
 .giffy{
@@ -354,4 +360,28 @@ img{
     opacity: 1;
     transform: translateX(0); 
   }
+}
+@keyframes jumpArrow{
+  0%{
+    transform: translateY(0px);
+  }
+  30%{
+    transform: translateY(-10px);
+  }
+  50%{
+    transform: translateY(-20px);
+  }
+  70%{
+    transform: translateY(-7px);
+  }
+  80%{
+    transform: translateY(-21px);
+  }
+  90%{
+    transform: translateY(-8px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+
 }

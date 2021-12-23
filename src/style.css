@@ -204,7 +204,12 @@ nav ul li a{
   background: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
-
+.home-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, black 10%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.5) 100%);
+  z-index: 1;
+}
 .home-captions{
   font-family: var(--primary-friends-font);
   display: flex;
@@ -247,6 +252,22 @@ nav ul li a{
 .headers{
   font-family: var(--primary-friends-font);
   padding: 30px 0 30px 15px;
+}
+.scroll-down{
+  width: 100%;
+  position: absolute;
+  bottom:20px;
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.fa-chevron-down{
+  color:white;
+  font-size: 30px;
+  animation: jumpArrow 2s linear infinite;
+  cursor: pointer;
 }
 #about{
   font-size: 20px;
@@ -548,7 +569,7 @@ nav ul li a{
   margin-bottom: 50px;
 }
 .reviews-container{
- height: 70vh;
+ height: 60vh;
  display: flex;
  justify-content: center;
  flex-direction: row;
@@ -571,7 +592,7 @@ nav ul li a{
 .review p {
   text-align: justify;
   color: white;
-  width: 50%;
+  width: 30%;
 }
 
 .reviewer{
@@ -695,6 +716,9 @@ nav ul li a{
   }
 }
 @media (max-width: 858px) {
+  .review p{
+    width:50%;
+  }
   .splash{
     font-size: 1.3rem;
     }
@@ -704,6 +728,7 @@ nav ul li a{
   #home{
     background: url(assets/images/backgrounds/friends_bg_mobile.png) no-repeat center;
     background-size: cover;
+    background-attachment: fixed;
   }
   .menu{
     display: block;
@@ -946,4 +971,28 @@ nav ul li a{
   100%{
     transform: rotate(360deg);
   }
+}
+@keyframes jumpArrow{
+  0%{
+    transform: translateY(0px);
+  }
+  30%{
+    transform: translateY(-10px);
+  }
+  50%{
+    transform: translateY(-20px);
+  }
+  70%{
+    transform: translateY(-7px);
+  }
+  80%{
+    transform: translateY(-21px);
+  }
+  90%{
+    transform: translateY(-8px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+
 }

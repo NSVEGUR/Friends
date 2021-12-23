@@ -37,6 +37,7 @@ const changeTheme = () => {
 		document.getElementById('mode-circle').style.background = 'var(--light-button-background)';
 		document.getElementById('mode-circle').style.boxShadow = 'inset 7px 7px 7px var(--light-neumorphism-shadow-1), inset -7px -7px 7px var(--light-neumorphism-shadow-2)';
 		document.getElementById('horizontalProgressBar').style.background = 'var(--progress-bar-light-color)';
+		document.querySelector('.header-overlay').style.background = 'linear-gradient(to top, var(--primary-light-color) 10%, rgba(255,255,255,0.6) 30%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 100%)';
 		document.body.style.transition = 'all 0.4s ease-in-out';
 	} else if (theme === false) {
 		document.body.style.color = 'white';
@@ -57,6 +58,7 @@ const changeTheme = () => {
 		document.getElementById('mode-circle').style.background = 'var(--dark-button-background)';
 		document.getElementById('mode-circle').style.boxShadow = 'inset 7px 7px 7px var(--dark-neumorphism-shadow-1), inset -7px -7px 7px var(--dark-neumorphism-shadow-2)';
 		document.getElementById('horizontalProgressBar').style.background = 'var(--progress-bar-dark-color)';
+		document.querySelector('.header-overlay').style.background = 'linear-gradient(to top, black 10%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.5) 100%)';
 	}
 }
 document.getElementById('mode-circle').addEventListener('click', () => {

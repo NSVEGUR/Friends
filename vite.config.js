@@ -12,7 +12,8 @@ export default defineConfig({
 		rollupOptions: {
 			input: {
 				main: resolve(root, 'index.html'),
-				building: resolve(root, 'building', 'index.html'),
+				apartment: resolve(root, 'apartment', 'index.html'),
+				weird_phoebe: resolve(root, 'weird_phoebe', 'index.html'),
 			}
 		}
 	}
