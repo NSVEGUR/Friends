@@ -14,6 +14,13 @@ var lastScrollTop = 0;
 let currentSlide = 0;
 var isScrolling;
 
+var animation = bodymovin.loadAnimation({
+	container: document.getElementById('float'),
+	renderer: 'svg',
+	loop: true,
+	autoplay: false,
+	path: 'https://assets2.lottiefiles.com/packages/lf20_vjOdvH.json'
+});
 //translating slides on scale of 100% * i
 const translateSlides = () => {
 	slides.forEach(
@@ -141,10 +148,10 @@ const startWindowsScroll = () => {
 		// parallaxX.style.backgroundPositionY = offset * 1.3 + 'px';
 
 		isScrolling = setTimeout(function () {
-
+			animation.pause();
 			// Run the callback
-			floatingButton.classList.remove('rotateBackgroundClockWise');
-			floatingButton.classList.remove('rotateBackgroundAntiClockWise');
+			// floatingButton.classList.remove('rotateBackgroundClockWise');
+			// floatingButton.classList.remove('rotateBackgroundAntiClockWise');
 
 		}, 66);
 		var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
@@ -153,17 +160,22 @@ const startWindowsScroll = () => {
 			if (parallaxX.scrollLeft != parallaxX.scrollWidth) {
 				parallaxX.scrollTo(parallaxX.scrollLeft + 5, 0);
 			}
-			floatingButton.classList.add('rotateBackgroundClockWise');
+			animation.setDirection(1);
+			animation.play();
+			// floatingButton.classList.add('rotateBackgroundClockWise');
 		} else {
 			// upscroll code
 			if (parallaxX.scrollLeft != parallaxX.scrollWidth) {
 				parallaxX.scrollTo(parallaxX.scrollLeft - 5, 0);
 			}
-			floatingButton.classList.add('rotateBackgroundAntiClockWise');
+			animation.setDirection(-1);
+			animation.play();
+			// floatingButton.classList.add('rotateBackgroundAntiClockWise');
 		}
 		lastScrollTop = st <= 0 ? 0 : st;
 	})
 };
+
 //starting everything
 const start = () => {
 	translateSlides();

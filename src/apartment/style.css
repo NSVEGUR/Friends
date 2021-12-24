@@ -129,7 +129,14 @@ nav{
   animation: transitionInX 2s ease-in-out;
  z-index: 100;
 }
-
+#runner{
+  position: fixed;
+  height: 80px;
+  bottom: 70px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 101;
+}
 .likes-count{
   font-size: 20px;
 }
@@ -304,6 +311,10 @@ img{
       height: 30px;
       bottom: 10px;
       right: 10px;
+      }
+      #runner{
+       bottom: 40px;
+       right: 0;
       }
     .likes-count{
       font-size:15px;

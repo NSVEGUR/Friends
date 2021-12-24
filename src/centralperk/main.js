@@ -4,9 +4,33 @@ import './style.css'
 let progress = document.getElementById('horizontalProgressBar');
 let totalHeight = document.body.scrollHeight - window.innerHeight;
 
+var lastScrollTop = 0;
+var isScrolling;
+var animation = bodymovin.loadAnimation({
+	container: document.getElementById('runner'),
+	renderer: 'svg',
+	loop: true,
+	autoplay: false,
+	path: 'https://assets2.lottiefiles.com/packages/lf20_vjOdvH.json'
+});
+
 window.addEventListener('scroll', () => {
 	let progressHeight = (window.pageYOffset / totalHeight) * 100;
 	progress.style.width = progressHeight + '%';
+	window.clearTimeout(isScrolling);
+	isScrolling = setTimeout(function () {
+		animation.pause();
+	}, 66);
+	var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+	if (st > lastScrollTop) {
+		// downscroll code
+		animation.setDirection(1);
+		animation.play();
+	} else {
+		animation.setDirection(-1);
+		animation.play();
+	}
+	lastScrollTop = st <= 0 ? 0 : st;
 })
 
 document.getElementById('float-like').addEventListener('click', () => {
