@@ -39,8 +39,8 @@ document.getElementById('float-like').addEventListener('click', () => {
 })
 
 const contentsMenu = () => {
-	document.getElementById('runner').addEventListener('click', () => {
-		document.getElementById('contents-container').classList.toggle('hidden');
+	document.getElementById('runner').addEventListener('mouseover', () => {
+		document.getElementById('contents-container').classList.remove('hidden');
 	});
 	document.querySelector('.fa-times').addEventListener('click', () => {
 		document.getElementById('contents-container').classList.add('hidden');
