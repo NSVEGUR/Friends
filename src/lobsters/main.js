@@ -38,6 +38,27 @@ document.getElementById('float-like').addEventListener('click', () => {
 	document.querySelector('.liked').classList.toggle('hidden');
 })
 
+const contentsMenu = () => {
+	document.getElementById('runner').addEventListener('click', () => {
+		document.getElementById('contents-container').classList.toggle('hidden');
+	});
+	document.querySelector('.fa-times').addEventListener('click', () => {
+		document.getElementById('contents-container').classList.add('hidden');
+	});
+}
+const contentsScroll = () => {
+	const contentBtns = document.querySelectorAll('.content-btn');
+	contentBtns.forEach((content, i) => {
+		content.addEventListener('click', () => {
+			document.querySelector(`.content-${i}`).scrollIntoView({
+				behavior: 'smooth'
+			})
+		})
+	})
+}
+var slidingTagLiAfterStyle = document.createElement("style");
+contentsMenu();
+contentsScroll();
 
 // themes
 let theme = false;
@@ -63,6 +84,21 @@ const changeTheme = () => {
 		document.getElementById('horizontalProgressBar').style.background = 'var(--progress-bar-light-color)';
 		document.querySelector('.header-overlay').style.background = 'linear-gradient(to top, var(--primary-light-color) 10%, rgba(255,255,255,0.6) 30%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 100%)';
 		document.body.style.transition = 'all 0.4s ease-in-out';
+		document.getElementById('contents').style.background = 'var(--dark-button-background)';
+		document.getElementById('contents').style.color = 'var(--light-button-background)';
+		slidingTagLiAfterStyle.innerHTML = `#contents::after{
+			position: absolute;
+			bottom:-20px;
+			right: 10%;
+			content: "";
+			border: 40px solid transparent;
+			border-top-color: var(--dark-button-background);
+			border-bottom: 0;
+			border-right: 0;
+			margin-bottom: -10px;
+			transform: rotate(-18deg);
+		}`;
+		document.head.appendChild(slidingTagLiAfterStyle);
 	} else if (theme === false) {
 		document.body.style.color = 'white';
 		document.body.style.background = 'var(--primary-dark-color)';
@@ -83,8 +119,24 @@ const changeTheme = () => {
 		document.getElementById('mode-circle').style.boxShadow = 'inset 7px 7px 7px var(--dark-neumorphism-shadow-1), inset -7px -7px 7px var(--dark-neumorphism-shadow-2)';
 		document.getElementById('horizontalProgressBar').style.background = 'var(--progress-bar-dark-color)';
 		document.querySelector('.header-overlay').style.background = 'linear-gradient(to top, black 10%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.5) 100%)';
+		document.getElementById('contents').style.background = 'var(--light-button-background)';
+		document.getElementById('contents').style.color = 'var(--dark-button-background)';
+		slidingTagLiAfterStyle.innerHTML = `#contents::after{
+			position: absolute;
+			bottom:-20px;
+			right: 10%;
+			content: "";
+			border: 40px solid transparent;
+			border-top-color: var(--light-button-background);
+			border-bottom: 0;
+			border-right: 0;
+			margin-bottom: -10px;
+			transform: rotate(-18deg);
+		}`;
+		document.head.appendChild(slidingTagLiAfterStyle);
 	}
 }
+
 document.getElementById('mode-circle').addEventListener('click', () => {
 	theme = !theme;
 	changeTheme();
