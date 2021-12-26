@@ -1,4 +1,4 @@
-import './style.css'
+import '../styles/style.css'
 
 //Dom variables
 const parallax = document.querySelector('.parallax');
