@@ -137,6 +137,25 @@ nav{
   cursor: pointer;
   z-index: 101;
 }
+.scrollButton{
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  bottom: 30px;
+  left: 30px;
+  cursor: pointer;
+  z-index: 101;
+  background: var(--dark-button-background);
+  box-shadow: inset 10px 10px 10px var(--dark-neumorphism-shadow-1), inset -7px -7px 7px var(--dark-neumorphism-shadow-2);
+  border-radius: 50%;
+}
+#scrollBtnDown, #scrollBtnUp{
+  font-size: 30px;
+}
 .likes-count{
   font-size: 20px;
 }
@@ -186,9 +205,7 @@ nav{
   color: rgb(200, 25, 25);
  }
 
-.hidden{
-  display: none;
-}
+
 
 .header-overlay{
   position: absolute;
@@ -364,7 +381,6 @@ img{
   padding: 5px;
   flex-direction: row;
   align-items: center;
-  overflow: hidden;
   gap: 30px;
   justify-content: center;
   height:150px;
@@ -395,6 +411,9 @@ img{
   width: 100px;
   height: 100px;
 }
+.hidden{
+  display: none;
+}
 @media (max-width: 758px){
     #float-mode{
       width: 40px;
@@ -413,6 +432,15 @@ img{
       #runner{
        bottom: 40px;
        right: 0;
+      }
+      .scrollButton{
+        height: 40px;
+        width: 40px;
+        bottom: 10px;
+        left: 10px;
+      }
+      #scrollBtnUp, #scrollBtnDown{
+        font-size: 20px;
       }
     .likes-count{
       font-size:15px;
@@ -449,6 +477,8 @@ img{
     }
     .article{
      width: 80%;
+     justify-content: flex-start;
+     align-items:flex-start;
     }
     .articles{
       flex-direction: column;

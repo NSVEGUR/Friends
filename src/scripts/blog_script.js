@@ -40,6 +40,7 @@ window.addEventListener('scroll', () => {
 		animation.play();
 	}
 	lastScrollTop = st <= 0 ? 0 : st;
+	triggerScrollBtn();
 })
 
 document.getElementById('float-like').addEventListener('click', () => {
@@ -64,6 +65,22 @@ const contentsScroll = () => {
 			})
 		})
 	})
+}
+const triggerScrollBtn = () => {
+	if (window.pageYOffset > 1 / 3 * window.innerHeight) {
+		document.querySelector('.scrollButton').style.animation = 'transitionInNormal 1s ease-in-out';
+		document.querySelector('.scrollButton').classList.remove('hidden');
+	} else {
+		document.querySelector('.scrollButton').style.animation = '';
+		document.querySelector('.scrollButton').classList.add('hidden');
+	}
+	if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 300)) {
+		document.getElementById('scrollBtnUp').classList.remove('hidden');
+		document.getElementById('scrollBtnDown').classList.add('hidden');
+	} else {
+		document.getElementById('scrollBtnUp').classList.add('hidden');
+		document.getElementById('scrollBtnDown').classList.remove('hidden');
+	}
 }
 var slidingTagLiAfterStyle = document.createElement("style");
 contentsMenu();
@@ -112,7 +129,9 @@ const changeTheme = () => {
 			el.style.color = 'white';
 			el.style.background = 'var(--dark-button-background)';
 			el.style.boxShadow = 'inset 7px 7px 7px var(--dark-neumorphism-shadow-1), inset -7px -7px 7px var(--dark-neumorphism-shadow-2)';
-		})
+		});
+		document.querySelector('.scrollButton').style.background = 'var(--light-button-background)';
+		document.querySelector('.scrollButton').style.boxShadow = 'inset 10px 10px 10px var(--light-neumorphism-shadow-1), inset -7px -7px 7px var(--light-neumorphism-shadow-2)';
 	} else if (theme === false) {
 		document.body.style.color = 'white';
 		document.body.style.background = 'var(--primary-dark-color)';
@@ -152,7 +171,9 @@ const changeTheme = () => {
 			el.style.color = 'black';
 			el.style.background = 'var(--light-button-background)';
 			el.style.boxShadow = 'inset 7px 7px 7px var(--light-neumorphism-shadow-1), inset -7px -7px 7px var(--light-neumorphism-shadow-2)';
-		})
+		});
+		document.querySelector('.scrollButton').style.background = 'var(--dark-button-background)';
+		document.querySelector('.scrollButton').style.boxShadow = 'inset 10px 10px 10px var(--dark-neumorphism-shadow-1), inset -7px -7px 7px var(--dark-neumorphism-shadow-2)';
 	}
 }
 document.getElementById('mode-circle').addEventListener('click', () => {
@@ -164,3 +185,19 @@ document.querySelector('.fa-chevron-down').addEventListener('click', () => {
 		behavior: 'smooth',
 	})
 });
+document.querySelector('.scrollButton').addEventListener('click', () => {
+	if (document.getElementById('scrollBtnUp').classList.contains('hidden')) {
+		window.scroll({
+			top: document.body.scrollHeight,
+			left: 0,
+			behavior: 'smooth'
+		});
+	}
+	else {
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: 'smooth'
+		});
+	}
+})

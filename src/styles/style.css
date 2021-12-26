@@ -634,8 +634,8 @@ nav ul li:nth-child(6){
   height: 10px;
   width: 10px;
   border: none;
-  background-color: #e2e2e2;
-  box-shadow: inset 3px 3px 3px var(--light-neumorphism-shadow-1), inset -3px -3px 3px var(--light-neumorphism-shadow-2), 3px 3px 7px var(--dark-neumorphism-shadow-2), -3px -3px 3px var(--dark-neumorphism-shadow-1);
+  background-color: white;
+  /* box-shadow: inset 3px 3px 3px var(--light-neumorphism-shadow-1), inset -3px -3px 3px var(--light-neumorphism-shadow-2), 3px 3px 7px var(--dark-neumorphism-shadow-2), -3px -3px 3px var(--dark-neumorphism-shadow-1); */
   border-radius: 50%;
   display: inline-block;
   transition: all 0.2s linear;
@@ -904,7 +904,13 @@ nav ul li:nth-child(6){
     font-size: 2em;
   }
 }
-
+.fa-star, .fa-star-half-alt{
+  font-size: 1em;
+  color:yellow;
+}
+.far{
+  color: white;
+}
 @keyframes animate{
   0%
   {
