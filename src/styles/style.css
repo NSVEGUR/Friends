@@ -193,7 +193,7 @@ nav ul li:nth-child(6){
 }
 
 #home{
-  background: url(assets/images/backgrounds/friends_bg_desktop.jpeg) no-repeat center;
+  background: url(../assets/images/backgrounds/friends_bg_desktop.jpeg) no-repeat center;
   background-attachment: fixed;
   background-size: cover;
   height:100vh;
@@ -385,7 +385,7 @@ nav ul li:nth-child(6){
   inset: 0;
   height: 100%;
   width: 100%;
-  background:url(./assets/images/gallery-overlay.png) no-repeat center center;
+  background:url(../assets/images/gallery-overlay.png) no-repeat center center;
   background-size: cover;
   z-index: 1;
 }
@@ -414,7 +414,7 @@ nav ul li:nth-child(6){
 #actors{
   width: 100%;
   height: 100vh;
-  background: url(/assets/images/actors_section/background.jpg);
+  background: url(../assets/images/actors_section/background.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
@@ -741,7 +741,7 @@ nav ul li:nth-child(6){
   margin: 0;
   }
   #home{
-    background: url(assets/images/backgrounds/friends_bg_mobile.png) no-repeat center;
+    background: url(../assets/images/backgrounds/friends_bg_mobile.png) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
   }
