@@ -1,6 +1,5 @@
 header{
-  margin-top: 80px;
-	height: calc(100vh - 80px);
+	height: 100vh;
 	background: url(./images/friends_building.jpg) no-repeat center center;
 	background-size: cover;
 	background-attachment: fixed;

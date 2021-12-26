@@ -1,6 +1,5 @@
 header{
-  margin-top: 80px;
-	height: calc(100vh - 80px);
+	height: 100vh;
 	background: url(./images/header.png) no-repeat center center;
   background-position: right;
 	background-size: cover;
