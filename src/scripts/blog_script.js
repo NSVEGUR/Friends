@@ -3,6 +3,8 @@ import '../styles/blog_style.css'
 
 let progress = document.getElementById('horizontalProgressBar');
 let totalHeight = document.body.scrollHeight - window.innerHeight;
+let theme = false;
+const maxScroll = 3;
 
 var lastScrollTop = 0;
 var isScrolling;
@@ -13,7 +15,6 @@ var animation = bodymovin.loadAnimation({
 	autoplay: false,
 	path: 'https://assets2.lottiefiles.com/packages/lf20_vjOdvH.json'
 });
-
 const readMoreAnim = bodymovin.loadAnimation({
 	container: document.getElementById('read'),
 	renderer: 'svg',
@@ -23,7 +24,27 @@ const readMoreAnim = bodymovin.loadAnimation({
 	path: 'https://assets4.lottiefiles.com/private_files/lf30_FJSIAJ.json'
 });
 
+//nav background change
+const triggerNavBackground = () => {
+	if (window.pageYOffset >= 1 / 3 * window.innerHeight) {
+		document.querySelector('.header-text').style.opacity = '0';
+		if (theme === true) {
+			document.querySelector('nav').style.background = 'var(--primary-light-color)';
+		} else {
+			document.querySelector('nav').style.background = 'var(--primary-dark-color)';
+		}
+	}
+	else {
+		document.querySelector('.header-text').style.opacity = '1';
+		document.querySelector('nav').style.background = 'transparent';
+	}
+}
+
 window.addEventListener('scroll', () => {
+	triggerNavBackground();
+	if ((1 + window.pageYOffset / 100) <= maxScroll) {
+		document.querySelector('header').style.transform = `scale(${1 + window.pageYOffset / 500})`;
+	}
 	let progressHeight = (window.pageYOffset / totalHeight) * 100;
 	progress.style.width = progressHeight + '%';
 	window.clearTimeout(isScrolling);
@@ -60,7 +81,7 @@ const contentsScroll = () => {
 	const contentBtns = document.querySelectorAll('.content-btn');
 	contentBtns.forEach((content, i) => {
 		content.addEventListener('click', () => {
-			document.querySelector(`.content-${i}`).scrollIntoView({
+			document.querySelector(`.content - ${i} `).scrollIntoView({
 				behavior: 'smooth'
 			})
 		})
@@ -87,12 +108,15 @@ contentsMenu();
 contentsScroll();
 
 // themes
-let theme = false;
 const changeTheme = () => {
 	if (theme === true) {
 		document.body.style.color = 'black';
 		document.body.style.background = 'var(--primary-light-color)';
-		document.querySelector('nav').style.background = 'var(--primary-light-color)';
+		if (window.pageYOffset >= 1 / 3 * window.innerHeight) {
+			document.querySelector('nav').style.background = 'var(--primary-light-color)';
+		} else {
+			document.querySelector('nav').style.background = 'transparent';
+		}
 		document.querySelectorAll('.link').forEach((el) => {
 			el.style.color = 'black';
 		});
@@ -113,17 +137,17 @@ const changeTheme = () => {
 		document.getElementById('contents').style.background = 'var(--dark-button-background)';
 		document.getElementById('contents').style.color = 'var(--light-button-background)';
 		slidingTagLiAfterStyle.innerHTML = `#contents::after{
-			position: absolute;
-			bottom:-20px;
-			right: 10%;
-			content: "";
-			border: 40px solid transparent;
-			border-top-color: var(--dark-button-background);
-			border-bottom: 0;
-			border-right: 0;
-			margin-bottom: -10px;
-			transform: rotate(-18deg);
-		}`;
+	position: absolute;
+	bottom: -20px;
+	right: 10 %;
+	content: "";
+	border: 40px solid transparent;
+	border - top - color: var(--dark - button - background);
+	border - bottom: 0;
+	border - right: 0;
+	margin - bottom: -10px;
+	transform: rotate(-18deg);
+} `;
 		document.head.appendChild(slidingTagLiAfterStyle);
 		document.querySelectorAll('.article-link').forEach((el) => {
 			el.style.color = 'white';
@@ -135,7 +159,11 @@ const changeTheme = () => {
 	} else if (theme === false) {
 		document.body.style.color = 'white';
 		document.body.style.background = 'var(--primary-dark-color)';
-		document.querySelector('nav').style.background = 'var(--primary-dark-color)';
+		if (window.pageYOffset >= 1 / 3 * window.innerHeight) {
+			document.querySelector('nav').style.background = 'var(--primary-dark-color)';
+		} else {
+			document.querySelector('nav').style.background = 'transparent';
+		}
 		document.querySelectorAll('.link').forEach((el) => {
 			el.style.color = 'white';
 		});
@@ -155,17 +183,17 @@ const changeTheme = () => {
 		document.getElementById('contents').style.background = 'var(--light-button-background)';
 		document.getElementById('contents').style.color = 'var(--dark-button-background)';
 		slidingTagLiAfterStyle.innerHTML = `#contents::after{
-			position: absolute;
-			bottom:-20px;
-			right: 10%;
-			content: "";
-			border: 40px solid transparent;
-			border-top-color: var(--light-button-background);
-			border-bottom: 0;
-			border-right: 0;
-			margin-bottom: -10px;
-			transform: rotate(-18deg);
-		}`;
+	position: absolute;
+	bottom: -20px;
+	right: 10 %;
+	content: "";
+	border: 40px solid transparent;
+	border - top - color: var(--light - button - background);
+	border - bottom: 0;
+	border - right: 0;
+	margin - bottom: -10px;
+	transform: rotate(-18deg);
+} `;
 		document.head.appendChild(slidingTagLiAfterStyle);
 		document.querySelectorAll('.article-link').forEach((el) => {
 			el.style.color = 'black';

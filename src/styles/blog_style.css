@@ -61,12 +61,13 @@ nav{
  position: static;
  height: 80px;
  width: 100%;
- background: var(--primary-dark-color);
+ background: transparent;
  z-index: 100;
  display: flex;
  flex-direction: row;
  align-items: center;
  justify-content: center;
+ transition: background 0.3s ease-in-out;
 }
 
 #horizontalProgressBar{
@@ -204,8 +205,13 @@ nav{
 .fa-heart{
   color: rgb(200, 25, 25);
  }
-
-
+.header-container{
+  overflow: hidden;
+}
+header{
+  margin: 0;
+  height: 100vh;
+}
 
 .header-overlay{
   position: absolute;
@@ -222,6 +228,7 @@ nav{
   gap: 20px;
   z-index: 3;
   text-align: center;
+  transition: all 0.5s ease-in-out;
 }
 .header-border{
   position: absolute;
@@ -494,10 +501,6 @@ img{
   }
   nav{
    height:60px;
-  }
-  header{
-    margin-top:60px;
-    height:calc(100vh - 60px);
   }
   .read-line{
     height:60%;

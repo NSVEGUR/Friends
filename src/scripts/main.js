@@ -136,33 +136,32 @@ const startListeners = () => {
 		});
 	});
 };
+//nav background change
+const triggerNavBackground = () => {
+	if (window.pageYOffset >= 100) {
+		document.querySelector('nav').style.background = 'var(--primary-dark-color)';
+	}
+	else {
+		document.querySelector('nav').style.background = 'transparent';
+	}
+}
 //windows scroll effects
 const startWindowsScroll = () => {
 	//animations on window scroll
 	window.addEventListener('scroll', () => {
+
+		triggerNavBackground();
 		window.clearTimeout(isScrolling);
-		let offset = window.pageYOffset;
-		// parallax.style.backgroundPositionY = offset * 0.7 + 'px';
-		// parallaxXSection.style.backgroundPositionX = offset * 0.9 + 'px';
-
-		// parallaxX.style.backgroundPositionY = offset * 1.3 + 'px';
-
 		isScrolling = setTimeout(function () {
 			animation.pause();
-			// Run the callback
-			// floatingButton.classList.remove('rotateBackgroundClockWise');
-			// floatingButton.classList.remove('rotateBackgroundAntiClockWise');
-
 		}, 66);
-		var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+		var st = window.pageYOffset || document.documentElement.scrollTop;
 		if (st > lastScrollTop) {
-			// downscroll code
 			if (parallaxX.scrollLeft != parallaxX.scrollWidth) {
 				parallaxX.scrollTo(parallaxX.scrollLeft + 5, 0);
 			}
 			animation.setDirection(1);
 			animation.play();
-			// floatingButton.classList.add('rotateBackgroundClockWise');
 		} else {
 			// upscroll code
 			if (parallaxX.scrollLeft != parallaxX.scrollWidth) {
@@ -170,7 +169,6 @@ const startWindowsScroll = () => {
 			}
 			animation.setDirection(-1);
 			animation.play();
-			// floatingButton.classList.add('rotateBackgroundAntiClockWise');
 		}
 		lastScrollTop = st <= 0 ? 0 : st;
 	})
