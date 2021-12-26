@@ -333,6 +333,68 @@ img{
   margin-bottom: -10px;
   transform: rotate(-18deg);
 }
+.readMore{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 100px;
+}
+.readMore hr{
+  width:100%;
+}
+#read{
+  width:150px;
+}
+.read-line{
+  background: white;
+  width: 4px;
+  height: 80%;
+}
+.articles{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.article{
+  display: flex;
+  padding: 5px;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  gap: 30px;
+  justify-content: center;
+  height:150px;
+  width: 50%;
+}
+.article-text{
+  display: flex;
+  flex-direction:column;
+  gap: 5px;
+}
+.article-link{
+  cursor: pointer;
+  text-align: center;
+  font-size:10px;
+  width:60px;
+  color: black;
+  background: var(--light-button-background);
+  box-shadow: inset 7px 7px 7px var(--light-neumorphism-shadow-1), inset -7px -7px 7px var(--light-neumorphism-shadow-2);
+  padding:2px;
+  border-radius: 5px;
+}
+.article-img{
+  padding: 10px;
+}
+.article-img img{
+  border-radius: 10px;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
 @media (max-width: 758px){
     #float-mode{
       width: 40px;
@@ -385,6 +447,12 @@ img{
     #contents div{
       padding: 5px 0;
     }
+    .article{
+     width: 80%;
+    }
+    .articles{
+      flex-direction: column;
+    }
 }
 @media (max-width:480px) {
   nav{
@@ -400,6 +468,17 @@ img{
   header{
     margin-top:60px;
     height:calc(100vh - 60px);
+  }
+  .read-line{
+    height:60%;
+  }
+  .article{
+    height:100px;
+    width:90%;
+  }
+  .article-img img{
+    width: 70px;
+    height: 70px;
   }
 }
 @keyframes transitionInNormal {

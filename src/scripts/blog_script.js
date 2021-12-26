@@ -14,6 +14,15 @@ var animation = bodymovin.loadAnimation({
 	path: 'https://assets2.lottiefiles.com/packages/lf20_vjOdvH.json'
 });
 
+const readMoreAnim = bodymovin.loadAnimation({
+	container: document.getElementById('read'),
+	renderer: 'svg',
+	loop: true,
+	autoplay: true,
+	// https://assets4.lottiefiles.com/packages/lf20_thcjohxh.json
+	path: 'https://assets4.lottiefiles.com/private_files/lf30_FJSIAJ.json'
+});
+
 window.addEventListener('scroll', () => {
 	let progressHeight = (window.pageYOffset / totalHeight) * 100;
 	progress.style.width = progressHeight + '%';
@@ -67,7 +76,7 @@ const changeTheme = () => {
 		document.body.style.color = 'black';
 		document.body.style.background = 'var(--primary-light-color)';
 		document.querySelector('nav').style.background = 'var(--primary-light-color)';
-		document.querySelectorAll('a').forEach((el) => {
+		document.querySelectorAll('.link').forEach((el) => {
 			el.style.color = 'black';
 		});
 		document.getElementById('me').style.color = 'var(--secondary-light-text-color)';
@@ -99,11 +108,16 @@ const changeTheme = () => {
 			transform: rotate(-18deg);
 		}`;
 		document.head.appendChild(slidingTagLiAfterStyle);
+		document.querySelectorAll('.article-link').forEach((el) => {
+			el.style.color = 'white';
+			el.style.background = 'var(--dark-button-background)';
+			el.style.boxShadow = 'inset 7px 7px 7px var(--dark-neumorphism-shadow-1), inset -7px -7px 7px var(--dark-neumorphism-shadow-2)';
+		})
 	} else if (theme === false) {
 		document.body.style.color = 'white';
 		document.body.style.background = 'var(--primary-dark-color)';
 		document.querySelector('nav').style.background = 'var(--primary-dark-color)';
-		document.querySelectorAll('a').forEach((el) => {
+		document.querySelectorAll('.link').forEach((el) => {
 			el.style.color = 'white';
 		});
 		document.getElementById('me').style.color = 'var(--secondary-dark-text-color)';
@@ -134,6 +148,11 @@ const changeTheme = () => {
 			transform: rotate(-18deg);
 		}`;
 		document.head.appendChild(slidingTagLiAfterStyle);
+		document.querySelectorAll('.article-link').forEach((el) => {
+			el.style.color = 'black';
+			el.style.background = 'var(--light-button-background)';
+			el.style.boxShadow = 'inset 7px 7px 7px var(--light-neumorphism-shadow-1), inset -7px -7px 7px var(--light-neumorphism-shadow-2)';
+		})
 	}
 }
 document.getElementById('mode-circle').addEventListener('click', () => {
