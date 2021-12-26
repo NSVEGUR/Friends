@@ -21,7 +21,7 @@
 }
 @font-face {
   font-family: friends;
-  src: url(./assets/fonts/friends.TTF);
+  src: url(../assets/fonts/friends.TTF);
   font-weight: bold;
 }
 
