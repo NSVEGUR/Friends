@@ -152,7 +152,6 @@ const changeTheme = () => {
 		document.querySelectorAll('.article-link').forEach((el) => {
 			el.style.color = 'white';
 			el.style.background = 'var(--dark-button-background)';
-			el.style.boxShadow = 'inset 7px 7px 7px var(--dark-neumorphism-shadow-1), inset -7px -7px 7px var(--dark-neumorphism-shadow-2)';
 		});
 		document.querySelector('.scrollButton').style.background = 'var(--light-button-background)';
 		document.querySelector('.scrollButton').style.boxShadow = 'inset 10px 10px 10px var(--light-neumorphism-shadow-1), inset -7px -7px 7px var(--light-neumorphism-shadow-2)';
@@ -197,8 +196,7 @@ const changeTheme = () => {
 		document.head.appendChild(slidingTagLiAfterStyle);
 		document.querySelectorAll('.article-link').forEach((el) => {
 			el.style.color = 'black';
-			el.style.background = 'var(--light-button-background)';
-			el.style.boxShadow = 'inset 7px 7px 7px var(--light-neumorphism-shadow-1), inset -7px -7px 7px var(--light-neumorphism-shadow-2)';
+			el.style.background = 'white';
 		});
 		document.querySelector('.scrollButton').style.background = 'var(--dark-button-background)';
 		document.querySelector('.scrollButton').style.boxShadow = 'inset 10px 10px 10px var(--dark-neumorphism-shadow-1), inset -7px -7px 7px var(--dark-neumorphism-shadow-2)';

@@ -404,8 +404,7 @@ img{
   font-size:10px;
   width:60px;
   color: black;
-  background: var(--light-button-background);
-  box-shadow: inset 7px 7px 7px var(--light-neumorphism-shadow-1), inset -7px -7px 7px var(--light-neumorphism-shadow-2);
+  background: white;
   padding:2px;
   border-radius: 5px;
 }

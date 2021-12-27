@@ -618,7 +618,7 @@ nav ul li:nth-child(6){
   margin-bottom: 50px;
 }
 .reviews-container{
- height: 60vh;
+ height: 75vh;
  display: flex;
  justify-content: center;
  flex-direction: row;
@@ -962,7 +962,7 @@ nav ul li:nth-child(6){
     inset: 3px;
   }
   .review p{
-    width:60%;
+    width:70%;
   }
   #me{
    font-size: 0.7em;
