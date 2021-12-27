@@ -85,6 +85,41 @@ nav{
   z-index: 100;
   transition: background 0.3s ease-in-out;
 }
+.menu-icon{
+  position: absolute;
+  right: 10px;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4.5px;
+}
+.menu-icon div{
+  height:2.7px;
+  background : white;
+  transition: all 0.4s linear;
+}
+.menu-icon div:nth-child(1){
+  width:25px;
+}
+.menu-icon div:nth-child(2){
+  width:20px;
+}
+.menu-icon div:nth-child(3){
+  width:30px;
+}
+.menu-icon-cross-0{
+  width:25px;
+  transform: rotate(45deg);
+}
+.menu-icon-cross-1{
+  display: none;
+}
+.menu-icon-cross-2{
+  width:25px;
+  transform: rotate(-45deg);
+}
 
 #float{
 	position:fixed;
@@ -181,10 +216,9 @@ nav ul li:nth-child(6){
 
 .menu{
   color: white;
-  font-size: 35px;
-  line-height: 80px;
+  /* font-size: 35px; */
+  /* line-height: 80px; */
   float: right;
-  margin-right: 20px;
   cursor: pointer;
   display: none;
 }
@@ -706,6 +740,9 @@ nav ul li:nth-child(6){
 .fab:hover ,.far:hover, .me:hover{
   transform: scale(1.5);
 }
+.hidden{
+  display: none;
+}
 @media (max-width: 1200px){
   .splash{
     font-size: 2rem;
@@ -740,6 +777,10 @@ nav ul li:nth-child(6){
     }
   body{
   margin: 0;
+  }
+  #float{
+    bottom: 10px;
+    right: 10px;
   }
   #home{
     background: url(../assets/images/backgrounds/friends_bg_mobile.png) no-repeat center;
@@ -841,11 +882,15 @@ nav ul li:nth-child(6){
   .splash{
   font-size: 0.8rem;
   }
+  nav{
+    height:60px;
+  }
+  ul{
+    top: 60px;
+  }
   #float{
     height: 50px;
     width: 50px;
-    bottom: 10px;
-    right: 10px;
   }
   #float img{
     height: 40px;
@@ -859,6 +904,27 @@ nav ul li:nth-child(6){
   }
   .menu{
     font-size: 35px;
+  }
+  .menu-icon{
+    top: 20px;
+    gap: 3.5px;
+  }
+  .menu-icon div{
+    height:2.4px;
+    background : white;
+  }
+  .menu-icon div:nth-child(1){
+    width:25px;
+  }
+  .menu-icon div:nth-child(2){
+    width:20px;
+  }
+  .menu-icon div:nth-child(3){
+    width:30px;
+  }
+  label.logo{
+    top: 0;
+    line-height:60px;
   }
   label.logo, .headers{
     font-size: 20px;

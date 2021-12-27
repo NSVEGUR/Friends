@@ -53,6 +53,24 @@ const makeDotsInteractive = () => {
 		})
 	});
 };
+document.querySelector('.menu').addEventListener('click', () => {
+	if (document.getElementById('check').checked === false) {
+		document.querySelectorAll('.menu-icon-line').forEach((el, i) => {
+			el.classList.add(`menu-icon-cross-${i}`);
+		})
+	} else {
+		document.querySelectorAll('.menu-icon-line').forEach((el, i) => {
+			el.classList.remove(`menu-icon-cross-${i}`);
+		})
+	}
+	if (window.pageYOffset < 100) {
+		if (document.getElementById('check').checked === true) {
+			document.querySelector('nav').style.background = 'transparent';
+		} else {
+			document.querySelector('nav').style.background = 'var(--primary-dark-color)';
+		}
+	}
+});
 //slider function
 const goTo = function (slide) {
 	currentSlide = slide;
@@ -141,7 +159,7 @@ const triggerNavBackground = () => {
 	if (window.pageYOffset >= 100) {
 		document.querySelector('nav').style.background = 'var(--primary-dark-color)';
 	}
-	else {
+	else if (document.getElementById('check').checked === false) {
 		document.querySelector('nav').style.background = 'transparent';
 	}
 }
