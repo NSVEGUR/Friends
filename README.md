@@ -1,11 +1,17 @@
 # Friends
 
 <div style="display:flex">
-<a href="https://flutter.dev/">
-<img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/">
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
 </a>
-<a href="https://dart.dev/">
-<img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"/>
+ <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/">
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+</a>
+ <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/">
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>
+</a>
+  <a href="https://vitejs.dev/">
+<img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"/>
 </a>
 </div>
   <br/>
